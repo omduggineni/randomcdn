@@ -21,7 +21,7 @@ do
   # If you've already run this script on some of these files, we shouldn't duplicate them.
   if [[ $f == *"$hash"* ]]
   then
-    echo "Skipping file. Name already contains the hash of its contents: $f"
+    # echo "Skipping file. Name already contains the hash of its contents: $f"
     continue
   fi
 
