@@ -23,8 +23,6 @@ jobs:
         python -m pip install tqdm
         python add_datasets_to_files.py
         python add_named_to_files.py
-        mkdir -p unnamed
-        python add_unnamed_to_files.py
         git add --all
         git config --global user.email "41898282+github-actions[bot]@users.noreply.github.com"
         git config --global user.name "github-actions"
