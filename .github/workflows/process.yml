@@ -1,0 +1,26 @@
+name: Process Datasets
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v2
+    - name: Set up Python 3.9
+      uses: actions/setup-python@v2
+      with:
+        python-version: 3.9
+    - name: Run scripts
+      run: |
+        python add_datasets_to_files.py
+        git add --all
+        git commit -m "auto-symlinked dataset files"
+        git pull --rebase origin main
+        git push
