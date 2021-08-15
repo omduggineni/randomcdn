@@ -19,6 +19,8 @@ jobs:
         python-version: 3.9
     - name: Run scripts
       run: |
+        python -m ensurepip
+        python -m pip install tqdm
         python add_datasets_to_files.py
         git add --all
         git commit -m "auto-symlinked dataset files"
