@@ -27,7 +27,7 @@ file_hashes = [hash(x) for x in tqdm(files)]
 symlink_paths = [f2sym(x, hash_x) for x, hash_x in zip(tqdm(files), file_hashes)]
 
 for file, file_hash, symlink_path in zip(tqdm(files), file_hashes, symlink_paths):
-    print(f"mv {file} {file_hash}")
-    os.system(f"mv {file} {file_hash}")
-    print(f"ln -s {symlink_path} {file}")
-    os.system(f"ln -s {symlink_path} {file}")
+    print(f"mv '{file}' '{file_hash}'")
+    os.system(f"mv '{file}' '{file_hash}'")
+    print(f"ln -s '{symlink_path}' {file}'")
+    os.system(f"ln -s '{symlink_path}' '{file}'")
